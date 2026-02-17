@@ -121,7 +121,7 @@ fun createGenerateCMakeTask(platform: String, arch: String, mode: String, buildT
     val modeUpper = mode.uppercase()
     val buildTypeCap = buildType.capitalizeUS()
     val taskName = "generate_cmake_${platform}_${arch}_${mode}_${buildType}"
-    tasks.register<Exec>(taskName) {
+    val task = tasks.register<Exec>(taskName) {
         description = "Generates CMake build files for $platform $arch."
         group = "dawn"
         workingDir(sourcePath)
@@ -176,7 +176,7 @@ fun createGenerateCMakeTask(platform: String, arch: String, mode: String, buildT
                 ))
             }
             "android" -> {
-                val ndkHome = System.getenv("ANDROID_NDK_HOME") ?: throw GradleException("ANDROID_NDK_HOME not set")
+                val ndkHome = System.getenv("ANDROID_NDK_HOME")
                 val abi = when (arch) {
                     "arm64" -> "arm64-v8a"
                     "armv7" -> "armeabi-v7a"
@@ -198,6 +198,11 @@ fun createGenerateCMakeTask(platform: String, arch: String, mode: String, buildT
             }
         }
         commandLine("cmake", *cmakeArgs.toTypedArray())
+    }
+    if (platform == "android") {
+        task.configure {
+            onlyIf { System.getenv("ANDROID_NDK_HOME") != null }
+        }
     }
 }
 
