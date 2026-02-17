@@ -118,15 +118,15 @@ nativeObject->CopyBufferToTexture((JGPU::WGPUTexelCopyBufferInfo* )source_addr, 
 */
     public static native void internal_native_CopyBufferToTexture(long this_addr, long source_addr, long destination_addr, long copySize_addr);
 
-    public void textureToBuffer(WGPUTexelCopyTextureInfo source, WGPUTexelCopyBufferInfo destination, WGPUExtent3D copySize) {
-        internal_native_TextureToBuffer(native_address, source.native_address, destination.native_address, copySize.native_address);
+    public void copyTextureToBuffer(WGPUTexelCopyTextureInfo source, WGPUTexelCopyBufferInfo destination, WGPUExtent3D copySize) {
+        internal_native_CopyTextureToBuffer(native_address, source.native_address, destination.native_address, copySize.native_address);
     }
 
     /*[-JNI;-NATIVE]
 JGPU::WGPUCommandEncoder* nativeObject = (JGPU::WGPUCommandEncoder*)this_addr;
-nativeObject->TextureToBuffer((JGPU::WGPUTexelCopyTextureInfo* )source_addr, (JGPU::WGPUTexelCopyBufferInfo* )destination_addr, (JGPU::WGPUExtent3D* )copySize_addr);
+nativeObject->CopyTextureToBuffer((JGPU::WGPUTexelCopyTextureInfo* )source_addr, (JGPU::WGPUTexelCopyBufferInfo* )destination_addr, (JGPU::WGPUExtent3D* )copySize_addr);
 */
-    public static native void internal_native_TextureToBuffer(long this_addr, long source_addr, long destination_addr, long copySize_addr);
+    public static native void internal_native_CopyTextureToBuffer(long this_addr, long source_addr, long destination_addr, long copySize_addr);
 
     public void copyTextureToTexture(WGPUTexelCopyTextureInfo source, WGPUTexelCopyTextureInfo destination, WGPUExtent3D copySize) {
         internal_native_CopyTextureToTexture(native_address, source.native_address, destination.native_address, copySize.native_address);

@@ -1690,7 +1690,7 @@ class WGPUCommandEncoder : public WGPUObjectBase<WGPUCommandEncoder, ::WGPUComma
         void ClearBuffer(WGPUBuffer* buffer, int offset, int size);
         void CopyBufferToBuffer(WGPUBuffer* source, int sourceOffset, WGPUBuffer* destination, int destinationOffset, int size);
         void CopyBufferToTexture(WGPUTexelCopyBufferInfo* source, WGPUTexelCopyTextureInfo* destination, WGPUExtent3D* copySize);
-        void TextureToBuffer(WGPUTexelCopyTextureInfo* source, WGPUTexelCopyBufferInfo* destination, WGPUExtent3D* copySize);
+        void CopyTextureToBuffer(WGPUTexelCopyTextureInfo* source, WGPUTexelCopyBufferInfo* destination, WGPUExtent3D* copySize);
         void CopyTextureToTexture(WGPUTexelCopyTextureInfo* source, WGPUTexelCopyTextureInfo* destination, WGPUExtent3D* copySize);
         void Finish(WGPUCommandBufferDescriptor* commandBufferDescriptor, WGPUCommandBuffer* commandBuffer);
         void InsertDebugMarker(const char* markerLabel);

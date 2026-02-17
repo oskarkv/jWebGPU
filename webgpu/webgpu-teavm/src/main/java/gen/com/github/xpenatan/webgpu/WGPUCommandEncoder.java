@@ -128,16 +128,16 @@ jsObj.CopyBufferToTexture(source_addr, destination_addr, copySize_addr);
     @org.teavm.jso.JSBody(params = {"this_addr", "source_addr", "destination_addr", "copySize_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUCommandEncoder);jsObj.CopyBufferToTexture(source_addr, destination_addr, copySize_addr);")
     public static native void internal_native_CopyBufferToTexture(int this_addr, int source_addr, int destination_addr, int copySize_addr);
 
-    public void textureToBuffer(WGPUTexelCopyTextureInfo source, WGPUTexelCopyBufferInfo destination, WGPUExtent3D copySize) {
-        internal_native_TextureToBuffer(native_address, source.native_address, destination.native_address, copySize.native_address);
+    public void copyTextureToBuffer(WGPUTexelCopyTextureInfo source, WGPUTexelCopyBufferInfo destination, WGPUExtent3D copySize) {
+        internal_native_CopyTextureToBuffer(native_address, source.native_address, destination.native_address, copySize.native_address);
     }
 
     /*[-TEAVM;-NATIVE]
 var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUCommandEncoder);
-jsObj.TextureToBuffer(source_addr, destination_addr, copySize_addr);
+jsObj.CopyTextureToBuffer(source_addr, destination_addr, copySize_addr);
 */
-    @org.teavm.jso.JSBody(params = {"this_addr", "source_addr", "destination_addr", "copySize_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUCommandEncoder);jsObj.TextureToBuffer(source_addr, destination_addr, copySize_addr);")
-    public static native void internal_native_TextureToBuffer(int this_addr, int source_addr, int destination_addr, int copySize_addr);
+    @org.teavm.jso.JSBody(params = {"this_addr", "source_addr", "destination_addr", "copySize_addr"}, script = "var jsObj = jWebGPU.wrapPointer(this_addr, jWebGPU.WGPUCommandEncoder);jsObj.CopyTextureToBuffer(source_addr, destination_addr, copySize_addr);")
+    public static native void internal_native_CopyTextureToBuffer(int this_addr, int source_addr, int destination_addr, int copySize_addr);
 
     public void copyTextureToTexture(WGPUTexelCopyTextureInfo source, WGPUTexelCopyTextureInfo destination, WGPUExtent3D copySize) {
         internal_native_CopyTextureToTexture(native_address, source.native_address, destination.native_address, copySize.native_address);

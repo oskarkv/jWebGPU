@@ -3769,7 +3769,7 @@ void JGPU::WGPUCommandEncoder::CopyBufferToTexture(JGPU::WGPUTexelCopyBufferInfo
     wgpuCommandEncoderCopyBufferToTexture(Get(), &source->Get(), &destination->Get(), copySize->Get());
 }
 
-void JGPU::WGPUCommandEncoder::TextureToBuffer(JGPU::WGPUTexelCopyTextureInfo* source, JGPU::WGPUTexelCopyBufferInfo* destination, JGPU::WGPUExtent3D* copySize) {
+void JGPU::WGPUCommandEncoder::CopyTextureToBuffer(JGPU::WGPUTexelCopyTextureInfo* source, JGPU::WGPUTexelCopyBufferInfo* destination, JGPU::WGPUExtent3D* copySize) {
     wgpuCommandEncoderCopyTextureToBuffer(Get(), &source->Get(), &destination->Get(), copySize->Get());
 }
 

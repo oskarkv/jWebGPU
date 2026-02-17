@@ -1230,7 +1230,7 @@ interface WGPUCommandEncoder {
     void ClearBuffer(WGPUBuffer buffer, long offset, long size);
     void CopyBufferToBuffer(WGPUBuffer source, long sourceOffset, WGPUBuffer destination, long destinationOffset, long size);
     void CopyBufferToTexture(WGPUTexelCopyBufferInfo source, WGPUTexelCopyTextureInfo destination, WGPUExtent3D copySize);
-    void TextureToBuffer(WGPUTexelCopyTextureInfo source, WGPUTexelCopyBufferInfo destination, WGPUExtent3D copySize);
+    void CopyTextureToBuffer(WGPUTexelCopyTextureInfo source, WGPUTexelCopyBufferInfo destination, WGPUExtent3D copySize);
     void CopyTextureToTexture(WGPUTexelCopyTextureInfo source, WGPUTexelCopyTextureInfo destination, WGPUExtent3D copySize);
     void Finish(WGPUCommandBufferDescriptor descriptor, WGPUCommandBuffer commandBuffer);
     void InsertDebugMarker([Const] DOMString value);
