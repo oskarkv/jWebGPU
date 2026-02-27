@@ -1,0 +1,6 @@
+{:paths ["webgpu/webgpu-base/src/main/java"
+         "webgpu/webgpu-core/src/main/java"
+         "demos/backend/core/src/main/java"
+         "demos/backend/desktop/src/main/java"]
+ :deps {org.lwjgl/lwjgl {:mvn/version "3.3.3"}
+        org.lwjgl/lwjgl-glfw {:mvn/version "3.3.3"}}}
